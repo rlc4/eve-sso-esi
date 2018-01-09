@@ -84,9 +84,7 @@ def standings():
         )
     if isinstance(resp, Exception):
         return 'Access denied: error=%s' % str(resp)
-    pprint(resp)
     return render_template("standings.html", standings=resp)
-    # return redirect(url_for("index"))
 
 # and when we're done, we can log out, destroying the session (flask) and the token (swagger_client)
 @app.route("/logout")
