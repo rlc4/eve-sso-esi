@@ -1,0 +1,26 @@
+<html>
+<body>
+<a href="{{ url_for("index")}}">Index</a>
+<br />
+{% if "character" in session %}
+    <table>
+        <tr>
+          <th>ID</th>
+          <th>Type</th>
+          <th>Standing</th>
+        </tr>
+        {% for r in standings %}
+          <tr>
+            <td> {{ r.from_id }} </td>
+            <td> {{ r.from_type }} </td>
+            <td> {{ r.standing }} </td>
+          </tr>
+        {% endfor %}
+    </table>
+
+    <a href="{{ url_for("logout") }}">Logout</a>
+{% else %}
+    <a href="{{ url_for("login") }}">Login</a>
+{% endif %}
+</body>
+</html>
