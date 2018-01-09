@@ -1,29 +1,27 @@
 <html>
-<body>
-{% if "character" in session %}
-    <table>
-        <tr>
-            <th>CharacterName</th>
-            <td>{{ session.character.CharacterName }}</td>
-        </tr>
-        <tr>
-            <th>CharacterOwnerHash</th>
-            <td>{{ session.character.CharacterOwnerHash }}</td>
-        </tr>
-        <tr>
-            <th>CharacterID</th>
-            <td>{{ session.character.CharacterID }}</td>
-        </tr>
-        <tr>
-          <th>Authorization Token</th>
-          <td>{{ session.evesso_token }} </td>
-        </tr>
-    </table>
-    <a href="{{ url_for("standings")}}">Character Standings (to server output)</a>
-    <br />
-    <a href="{{ url_for("logout") }}">Logout</a>
-{% else %}
-    <a href="{{ url_for("login") }}">Login</a>
-{% endif %}
-</body>
+  <body>
+    {% if "character" in session %}
+      <div>
+        <span><a href="{{ url_for("index")}}">Index</a></span>
+        <span><a href="{{ url_for("standings")}}">Character Standings</a></span>
+        <span><a href="{{ url_for("logout") }}">Logout</a> </span>
+      </div>
+      <table>
+          <tr>
+              <th>CharacterName</th>
+              <td>{{ session.character.CharacterName }}</td>
+          </tr>
+          <tr>
+              <th>CharacterOwnerHash</th>
+              <td>{{ session.character.CharacterOwnerHash }}</td>
+          </tr>
+          <tr>
+              <th>CharacterID</th>
+              <td>{{ session.character.CharacterID }}</td>
+          </tr>
+      </table>
+    {% else %}
+      <a href="{{ url_for("login") }}">Login</a>
+    {% endif %}
+  </body>
 </html>
