@@ -25,7 +25,7 @@ echo "your application.   ^Z this and come back when you are done."
 echo "Hit return when ready to continue"
 read garbage
 
-export FLASK_APP sso.py
-flask run
+# export FLASK_APP sso.py
+python sso.py
 
 echo "To run the app without using this script:  FLASK_APP=sso.py flask run"

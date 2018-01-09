@@ -25,7 +25,7 @@ After the initial demonstration, to re-run the application from the command
 line on your own, you will want to do the following:
 
 1. . venv/bin/activate  
-2. FLASK_APP=sso.py flask run  # do this as many times as you want as you test things out
+2. python sso.py # do this as many times as you want as you test things out
 3. deactivate   # ends your virtualenv session
 
 #### Comments
